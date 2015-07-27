@@ -1,0 +1,19 @@
+body {
+	background: url("images/f4-vente.png"); no-repeat center center fixed; 
+    background-size: cover;
+}
+
+home {
+	background-color: red;
+}
+schedule {
+	background-color: green;
+}
+
+pratical {
+	background-color: white;
+}
+
+pictures {
+	background-color: blue;
+}
