@@ -5,19 +5,33 @@ body {
 
 home {
 	background-color: red;
-}
-schedule {
-	background-color: green;
-}
-
-pratical {
-	background-color: white;
+	position: absolute;
+	top: 10%;
+	left: 43%;
 }
 
-pictures {
-	background-color: blue;
+accessButton {
+	position: absolute;
+	top: 10%;
+	left: 43%;
 }
 
-polyjapan {
-	background-color: black;
+a.access {
+	display:block;
+	padding: 2%;
+}
+content {
+	position: absolute;
+	bottom:5%;
+	left:5%;
+	background-color:gray;
+	opacity:0.9;
+	height:40%;
+	width:35%;
+}
+
+countdown {
+	position:absolute;
+	left:14%;
+	top:5%;
 }
