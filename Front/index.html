@@ -1,6 +1,25 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="jquery-1.11.3.js"></script>
+		<!-- for the prod -->
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+		<!-- bxSlider Javascript file -->
+		<script src="js/jquery.bxslider.min.js"></script>
+		<!-- bxSlider CSS file -->
+		<link href="js/jquery.bxslider.css" rel="stylesheet" />
+		<!-- jquery script for content slider -->
+		<script>
+			$(document).ready(function(){
+				$('.bxslider').bxSlider({
+				  auto: true,
+				  autoControls: false,
+				  controls: true,
+				  captions: true
+				});
+			});
+		</script>
 	</head>
 	<body>
 		<countdown><iframe src="http://free.timeanddate.com/countdown/i4s2hhq3/n945/cf11/cm0/cu4/ct0/cs1/ca0/co0/cr0/ss0/cac000/cpc000/pcfff/tcfff/fs100/szw320/szh135/iso2016-02-20T08:00:00" allowTransparency="true" frameborder="0" width="269" height="19"></iframe>
@@ -13,7 +32,13 @@
 			<a class="access" href="polyjapan.html">PolyJapan</a>
 		</accessButton>
 		<content>
-			post
+			<ul class="bxslider">
+				<li><img src="content/pic1.jpg" title="<a href='index.html'>Big News 1 </a>" /></li>
+				<li><img src="content/pic2.jpg" title="<a href='index.html'>Big News 2 </a>" /></li>
+				<li><img src="content/pic3.jpg" title="<a href='index.html'>Big News 3 </a>" /></li>
+				<li><img src="content/pic4.jpg" title="<a href='index.html'>Big News 4 </a>" /></li>
+				<li><h1>Big news</h1><p>Il pleut ...............................................................................................................................................................................</p></li>
+			</ul>
 		</content>
 	</body>
 </html>

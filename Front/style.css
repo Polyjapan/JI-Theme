@@ -22,11 +22,10 @@ a.access {
 }
 content {
 	position: absolute;
-	bottom:5%;
+	bottom:-5%;
 	left:5%;
-	background-color:gray;
 	opacity:0.9;
-	height:40%;
+	/*height:47%;*/
 	width:35%;
 }
 
