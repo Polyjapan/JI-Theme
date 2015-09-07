@@ -3,6 +3,9 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<script src="jquery-1.11.3.js"></script>
+		<!-- For the navigation menu -->
+		<link rel="stylesheet" href="respnav/responsive-nav.css">
+		<script src="respnav/responsive-nav.js"></script>
 		<!-- for the prod -->
 		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
 		<!-- bxSlider Javascript file -->
@@ -31,6 +34,16 @@
 			<a class="access" href="photos.html">Photos</a>
 			<a class="access" href="polyjapan.html">PolyJapan</a>
 		</accessButton>
+		<!-- Navigation menu-->
+		<nav class="nav-collapse">
+		  <ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Projects</a></li>
+			<li><a href="#">Contact</a></li>
+		  </ul>
+		</nav>
+		<!-- content slider -->
 		<content>
 			<ul class="bxslider">
 				<li><img src="content/pic1.jpg" title="<a href='index.html'>Big News 1 </a>" /></li>
@@ -40,5 +53,9 @@
 				<li><h1>Big news</h1><p>Il pleut ...............................................................................................................................................................................</p></li>
 			</ul>
 		</content>
+		<!--Navigation menu : Put this right before the </body> closing tag -->
+		<script>
+		  var nav = responsiveNav(".nav-collapse");
+		</script>
 	</body>
 </html>
