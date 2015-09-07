@@ -1,6 +1,16 @@
 body {
-	background: url("images/f4-vente.png"); no-repeat center center fixed; 
+	background: url("images/BackgroundEntry.png"); no-repeat center center fixed; 
     background-size: cover;
+}
+
+.border {
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: .5em;
+	background: #aa0000;
 }
 
 home {
@@ -10,20 +20,26 @@ home {
 	left: 43%;
 }
 
-accessButton {
-	position: absolute;
-	top: 10%;
-	left: 43%;
+.menuHome {
+	-webkit-font-smoothing: subpixel-antialised;
+	color:white;
+	background:#aa0000;
+	font-size: 100%;
 }
 
 a.access {
 	display:block;
 	padding: 2%;
 }
+
+#menuA {
+	text-decoration:none;
+	color: black;
+}
 content {
 	position: absolute;
-	bottom:-5%;
-	left:5%;
+	bottom:7%;
+	left:50%;
 	opacity:0.9;
 	/*height:47%;*/
 	width:35%;
@@ -31,6 +47,6 @@ content {
 
 countdown {
 	position:absolute;
-	left:14%;
-	top:5%;
+	left:75%;
+	top:15%;
 }
