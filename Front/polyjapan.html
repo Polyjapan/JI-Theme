@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="jquery-1.11.3.js"></script>
+		<!-- For the navigation menu -->
+		<link rel="stylesheet" href="respnav/responsive-nav.css">
+		<script src="respnav/responsive-nav.js"></script>
+		<!-- for the prod -->
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+	</head>
+	<body>
+		<div class="border" id="home"></div>
+		<!-- Navigation menu-->
+		<nav class="nav-collapse">
+		  <ul>
+			<li><a href="#" id="menuA">Home</a></li>
+			<li class="menuHome"><a href="polyjapan.html" id="menuA">PolyJapan</a></li>
+			<li><a href="#" id="menuA">Visiteur</a></li>
+			<li><a href="#" id="menuA">Programme</a></li>
+			<li><a href="#" id="menuA">Photos</a></li>
+		  </ul>
+		</nav>
+		<div class="contentPage">
+			contenu de la page se trouvera ici
+		</div>
+		<!--Navigation menu : Put this right before the </body> closing tag -->
+		<script>
+		  var nav = responsiveNav(".nav-collapse");
+		</script>
+	</body>
+</html>

@@ -53,3 +53,12 @@ countdown {
 	left:75%;
 	top:15%;
 }
+
+.contentPage {
+	position:absolute;
+	left: 40%;
+	top: 20%;
+	background-color: lightgrey;
+	width: 50%;
+	height:60%;
+}
