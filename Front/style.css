@@ -14,7 +14,7 @@ body {
 	top: 0;
 	left: 0;
 	right: 0;
-	height: .5em;
+	height: .7em;
 	background: #aa0000;
 }
 
@@ -68,7 +68,7 @@ countdown {
 .menu {
 	position: relative;
 	width: 100%;
-	height:50px;
+	min-height:50px;
 }
 
 .main{
