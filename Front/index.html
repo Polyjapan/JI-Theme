@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<!-- For the navigation menu -->
+		<link rel="stylesheet" href="respnav/responsive-nav.css">
+		<script src="respnav/responsive-nav.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<script src="jquery-1.11.3.js"></script>
 		<!-- For the navigation menu -->
@@ -25,19 +28,30 @@
 		</script>
 	</head>
 	<body>
-		<div class="border" id="home"></div>
-		<countdown><iframe src="http://free.timeanddate.com/countdown/i4s2hhq3/n945/cf11/cm0/cu4/ct0/cs1/ca0/co0/cr0/ss0/cac000/cpc000/pcfff/tcfff/fs100/szw320/szh135/iso2016-02-20T08:00:00" allowTransparency="true" frameborder="0" width="269" height="19"></iframe>
+		<countdown>
+			<iframe src="http://free.timeanddate.com/countdown/i4s2hhq3/n945/cf11/cm0/cu4/ct0/cs1/ca0/co0/cr0/ss0/cac000/cpc000/pcfff/tcfff/fs100/szw320/szh135/iso2016-02-20T08:00:00" allowTransparency="true" frameborder="0" width="269" height="19"></iframe>
 		</countdown>
-		<!-- Navigation menu-->
-		<nav class="nav-collapse">
-		  <ul>
-			<li class="menuHome"><a href="#" id="menuA">Home</a></li>
-			<li><a href="polyjapan.html" id="menuA">PolyJapan</a></li>
-			<li><a href="#" id="menuA">Visiteur</a></li>
-			<li><a href="#" id="menuA">Programme</a></li>
-			<li><a href="#" id="menuA">Photos</a></li>
-		  </ul>
-		</nav>
+		<div class="menu">
+			<div class="border" id="home"></div>
+			
+			<!-- Navigation menu-->
+			<nav class="nav-collapse">
+			  <ul>
+				<li class="menuHome"><a href="#" id="menuA">Home</a></li>
+				<li><a href="polyjapan.html" id="menuA">PolyJapan</a></li>
+				<li><a href="#" id="menuA">Visiteur</a></li>
+				<li><a href="#" id="menuA">Programme</a></li>
+				<li><a href="#" id="menuA">Photos</a></li>
+			  </ul>
+			</nav>
+		</div>
+		<div class="main">
+		<div class="poster">
+		</div>
+		<div class ="content">
+		</div>
+		</div>
+		
 		<!-- content slider -->
 		<content>
 			<ul class="bxslider">
@@ -48,6 +62,8 @@
 				<li><h1>Big news</h1><p>Il pleut ...............................................................................................................................................................................</p></li>
 			</ul>
 		</content>
+		<footer>
+		</footer>
 		<!--Navigation menu : Put this right before the </body> closing tag -->
 		<script>
 		  var nav = responsiveNav(".nav-collapse");

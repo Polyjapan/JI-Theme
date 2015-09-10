@@ -302,6 +302,7 @@
           nav.style.position = opts.openPos;
           setAttributes(nav, {"aria-hidden": "false"});
           navOpen = true;
+		  nav.style.width = "100%";
           opts.open();
         }
       },
@@ -328,6 +329,7 @@
           // Animations aren't enabled, we can do these immediately
           } else {
             nav.style.position = "absolute";
+			nav.style.width = "auto";
           }
 
           navOpen = false;
