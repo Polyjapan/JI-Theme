@@ -12,6 +12,11 @@
 	
 	<!-- style -->
 	<link href="css/style.css" rel="stylesheet">
+	
+	<!--countdown -->
+	<script src="countdown/countdown.js"></script>
+
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -21,6 +26,8 @@
     <![endif]-->
   </head>
   <body>
+		<!--countdown script -->
+
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="container">
 			  <div class="navbar-header">
@@ -34,10 +41,10 @@
 			  </div>
 			  <div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-				  <li class="active"><a href="#">Home</a></li>
-				  <li><a href="#about">About</a></li>
-				  <li><a href="#contact">Contact</a></li>
-				  <li class="dropdown">
+				  <li class="active" id="menuLink"><a href="#">Home</a></li>
+				  <li id="menuLink"><a href="#about">About</a></li>
+				  <li id="menuLink"><a href="#contact">Contact</a></li>
+				  <li class="dropdown" id="menuLink">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 					  <li><a href="#">Action</a></li>
@@ -47,6 +54,30 @@
 				  </li>
 				</ul>
 			  </div><!--/.nav-collapse -->
+			  <div class="navbar-countdown">
+						<script>
+							var myCountdown1 = new Countdown({
+													year	: 2016,
+													month	: 2, 
+													day		: 20,
+													width	: 100, 
+													height	: 30,
+													hideLine	: false,
+													inline		: true,
+													rangeHi		: "month",
+													rangeLo		: "days",
+													labelText	: 	{
+																		second 	: "SECONDS",
+																		minute 	: "MINUTES",
+																		hour	: "HOURS",
+																		day 	: "JOURS",
+																		month 	: "MOIS",
+																		year 	: "ANNEE"			// <- no comma on last item!
+																	}
+													});
+						</script>
+						avant le prochain Japan Impact !
+			  </div>
 			</div>
 		  </nav>
 		  <div class="container">
@@ -87,6 +118,7 @@
 					</a>
 				 </div>
 				 <h2> Un peu de bordel pour mettre bien du contenu </h2>
+				 <div class="fb-like"></div>
 				 <p>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id velit ac est condimentum dapibus. Proin auctor nec urna in convallis. Phasellus ac risus nisi. Nulla vel risus eget quam viverra tempus. Vivamus consectetur varius ultricies. In ut ornare erat. Sed lobortis neque id cursus tristique. Vivamus placerat velit elit, sit amet finibus lectus luctus ut. Suspendisse vel luctus justo. Duis aliquet eros eget consequat tincidunt. In at ipsum a sapien sollicitudin vulputate sit amet vitae mauris. Suspendisse porttitor consequat vehicula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam tristique enim non sollicitudin elementum. Cras sed quam a elit suscipit tincidunt.</p><p>
 
@@ -106,6 +138,9 @@ Mauris iaculis mauris id iaculis porttitor. Curabitur nulla sem, interdum ut urn
 			<p id="centerP">
 				Ceci est le footer 0_0
 			</p>
+			<div class="socialMediaButton">
+				
+			</div>
 	</footer>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

@@ -3,6 +3,7 @@
 
 #centerP {
 	margin:auto;
+	padding-top: 5px;
 	width:200px;
 }
 
@@ -10,7 +11,7 @@
 	max-width:400px;
 	margin:auto;
 }
-
+/** main content */
 .leftPoster {
 	width:20%;
 	position:fixed;
@@ -32,16 +33,36 @@
 	width:80%;
 	text-align:center;
 	margin-left:20%;
+	padding: 15px;
 }
-
+ /* End of main content*/
 .container {
 	width:100%
+}
+
+/** Navigation menu */
+.navbar {
+	background-color : #aa0000;
 }
 
 .navbar-nav {
 	margin:auto;
 	max-width:400px;
 	float:none;
+}
+
+#menuLink a{
+	color: #ffffff;
+}
+
+.dropdown-menu {
+	background-color : black;
+	border-bottom-left-radius : 20px;
+	border-bottom-right-radius : 20px;
+}
+
+.dropdown-menu a:hover {
+	background-color: black;
 }
 
 .navbar-brand {
@@ -53,18 +74,30 @@
 	max-width:200px;
 }
 
+.navbar-countdown {
+	position: fixed;
+	right:15px;
+	top: 15px;
+	color: white;
+}
+
+/* End of navigation menu */
+
 footer {
 	position:fixed;
 	bottom:0px;
-	background-color:brown;
+	background-color: #EDEDED;
 	width:100%;
 	height:30px;
+	vertical-align : middle;
 }
 
 /* static menu */
 body {
   padding-top: 70px;
 }
+
+/** media for mobile */
 
 @media (max-width: 767px) {
 	.leftPoster{
@@ -74,10 +107,17 @@ body {
 	.rightContent{
 		width:100%;
 		margin-left:0%;
+		padding: 0px;
 		/* fonctionne mais moche
 		background-image: url("../../images/Entry2.jpg");
 		background-position: center center;
 		background-repeat:  no-repeat;
 		background-size: contain;*/
 	}
+	
+	.navbar-countdown  {
+		 visibility: hidden;
+	}
 }
+
+/* End of media for mobile */
