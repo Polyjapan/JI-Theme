@@ -1,0 +1,45 @@
+
+/* custom theme */
+
+#centerP {
+	margin:auto;
+	width:200px;
+}
+
+.leftPoster {
+	background-color: red;
+	width:20%;
+	float:left;
+	display: inline-block;
+	min-height:700px;
+}
+
+.rightContent {
+	background-color: brown;
+	display:inline-block;
+	min-height:700px;
+	width:80%;
+}
+
+.container {
+	width:100%
+}
+
+.navbar-nav {
+	margin:auto;
+	width:400px;
+	float:none;
+}
+
+footer {
+	position:absolute;
+	bottom:0px;
+	background-color:brown;
+	width:100%;
+	height:60px;
+}
+
+/* static menu */
+body {
+  padding-top: 70px;
+}
