@@ -13,6 +13,7 @@
 
 .leftPoster {
 	width:20%;
+	position:fixed;
 	float:left;
 	display: inline-block;
 	min-height:700px;
@@ -24,11 +25,13 @@
 }
 
 .rightContent {
-	background-color: brown;
+	background-color: white;
 	display:inline-block;
-	min-height:700px;
+	/*min-height:700px;*/
+	/*min-height:2000px;*/
 	width:80%;
 	text-align:center;
+	margin-left:20%;
 }
 
 .container {
@@ -51,7 +54,7 @@
 }
 
 footer {
-	position:absolute;
+	position:fixed;
 	bottom:0px;
 	background-color:brown;
 	width:100%;
@@ -61,4 +64,20 @@ footer {
 /* static menu */
 body {
   padding-top: 70px;
+}
+
+@media (max-width: 767px) {
+	.leftPoster{
+		width:0%;
+	}
+	
+	.rightContent{
+		width:100%;
+		margin-left:0%;
+		/* fonctionne mais moche
+		background-image: url("../../images/Entry2.jpg");
+		background-position: center center;
+		background-repeat:  no-repeat;
+		background-size: contain;*/
+	}
 }
