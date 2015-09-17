@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>alpha.japan-impact.ch</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+		<nav class="navbar navbar-static">
+			<div class="container">
+			  <div class="nav-collapse collase">
+				<ul class="nav navbar-nav">  
+				  <li><a href="#" id="home">Home</a></li>
+				  <li><a href="#" id="PolyJapan">PolyJapan</a></li>
+				  <li><a href="#" id="visiteur">Visiteur</a></li>
+				  <li><a href="#" id="programme">Programme</a></li>
+				  <li><a href="#" id="photos">Photos</a></li>
+				  <br>
+				  
+				  <li class="togglehome"><a href="#">home1</a></li>
+				  <li class="togglehome"><a href="#">home2</a></li>
+				  
+				  <li class="togglepolyjapan"><a href="#">polyjapan1</a></li>
+				  <li class="togglepolyjapan"><a href="#">polyjapan2</a></li>
+				  
+				  <li class="togglevisiteur"><a href="#">visiteur1</a></li>
+				  <li class="togglevisiteur"><a href="#">visiteur2</a></li>
+				
+
+				  <li class="toggleprogramme"><a href="#">programme1</a></li>
+				  <li class="toggleprogramme"><a href="#">programme2</a></li>
+
+				  <li class="togglephotos"><a href="#">photos1</a></li>
+				  <li class="togglephotos"><a href="#">photos2</a></li>				  
+				</ul>
+			  </div>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="col col-sm-3">
+				<div id="sidebar">
+					<ul class="nav nav-stacked">
+						<li><h3 class="highlight">Menu gauche</h3></li>
+						<li><a href="#">first link</a></li>
+						<li><a href="#">second link</a></li>
+					</ul>
+				</div>
+			</div>  
+			<div class="panel">
+				<h1>Menu Center</h1>
+				<div class="container">
+				container
+				des exemples de carousel :
+				http://www.jssor.com/download-bootstrap-carousel-slider-example.html
+				<br/>
+				sinon tu as le plugin natif de bootstrap
+				<br/>
+				http://getbootstrap.com/javascript/#carousel
+				</div>
+			</div> 
+		</div>	
+		<!-- script JS -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/scripts.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script>
+		$(document).ready(function(){
+			$(".togglehome").hide();
+			$(".togglepolyjapan").hide();
+			$(".togglevisiteur").hide();
+			$(".toggleprogramme").hide();
+			$(".togglephotos").hide();
+			
+			$("#home").click(function(){
+				$(".togglehome").toggle();
+				$(".togglepolyjapan").hide();
+				$(".togglevisiteur").hide();
+				$(".toggleprogramme").hide();
+				$(".togglephotos").hide();
+			});
+			$("#PolyJapan").click(function(){
+				$(".togglepolyjapan").toggle();
+				$(".togglehome").hide();
+				$(".togglevisiteur").hide();
+				$(".toggleprogramme").hide();
+				$(".togglephotos").hide();
+				});
+			$("#visiteur").click(function(){
+				$(".togglevisiteur").toggle();
+				$(".togglehome").hide();
+				$(".togglepolyjapan").hide();
+				$(".toggleprogramme").hide();
+				$(".togglephotos").hide();
+			});
+			$("#programme").click(function(){
+				$(".toggleprogramme").toggle();
+				$(".togglehome").hide();
+				$(".togglepolyjapan").hide();
+				$(".togglevisiteur").hide();
+				$(".togglephotos").hide();
+			});
+			$("#photos").click(function(){
+				$(".togglephotos").toggle();
+				$(".togglehome").hide();
+				$(".togglepolyjapan").hide();
+				$(".togglevisiteur").hide();
+				$(".toggleprogramme").hide();
+			});			
+		});
+		</script>
+	</body>
+</html>
