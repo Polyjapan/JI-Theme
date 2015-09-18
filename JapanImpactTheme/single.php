@@ -1,8 +1,11 @@
 <!-- page pour un post -->
 <?php get_header(); ?>
-<?php get_sidebar(); ?>
-<div class="content">
-	<?php if (have_posts()) : ?>
+<div class="container">
+	<div class="leftPoster">
+			
+	</div>
+	<div class="rightContent">
+		<?php if (have_posts()) : ?>
 		<?php while (have_posts()) : the_post(); ?>
 			<div class="post">
 				<h1 class="post-title"><?php the_title(); ?></h1>
@@ -15,5 +18,6 @@
 			</div>
 		<?php endwhile; ?>
 	<?php endif; ?>
+	</div>
 </div>
 <?php get_footer(); ?>

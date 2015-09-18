@@ -1,5 +1,9 @@
-<div class="content">
-	<?php if (have_posts()) : ?>
+<div class="container">
+	<div class="leftPoster">
+			
+	</div>
+	<div class="rightContent">
+		<?php if (have_posts()) : ?>
 		<?php while (have_posts()) : the_post(); ?>
 			<div class="post">
 				<h3 class="post-title">
@@ -16,4 +20,5 @@
 			Il n'y a pas de Post à afficher !
 		</p>
 	<?php endif; ?>
+	</div>
 </div>
