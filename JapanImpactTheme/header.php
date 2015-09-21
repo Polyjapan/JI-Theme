@@ -5,18 +5,20 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><?php wp_title(''); ?></title>
-		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" type ="image/x-icon" />
-		<link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" type ="image/x-icon"/>
-		<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css">
+		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" type ="image/x-icon" />
+		<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" type ="image/x-icon"/>
 		
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<title>Japan Impact new beautiful website</title>
 
 		<!-- Bootstrap -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.min.css" rel="stylesheet">
+		
+		<!-- style -->
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" type="text/css">
 		
 		<!--countdown -->
-		<script src="countdown/countdown.js"></script>
+		<script src="<?php echo get_template_directory_uri(); ?>/countdown/countdown.js"></script>
 		
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,21 +39,81 @@
 				  <span class="icon-bar"></span>
 				  <span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><img alt="Japan Impact" src="images/logo-b.png" width="50%"></a>
+				<a class="navbar-brand" href="#"><img alt="Japan Impact" src="<?php echo get_template_directory_uri(); ?>/images/logo-b.png" width="50%"></a>
 			  </div>
 			  <div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 				  <li class="active" id="menuLink"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li>
-				  <li id="menuLink"><a href="#about">About</a></li>
-				  <li id="menuLink"><a href="#contact">Contact</a></li>
-				  <li class="dropdown" id="menuLink">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-					  <li><a href="#">Action</a></li>
-					  <li><a href="#">Another action</a></li>
-					  <li><a href="#">Something else here</a></li>
-					</ul>
-				  </li>
+				   <?php 
+				   /* Creation du menu dynamiquement */
+					 	$menu_name = 'header-menu';
+					 	if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) 
+					 	{
+					 		$menu_array = array();
+							$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+
+							$menu_items = wp_get_nav_menu_items($menu->term_id);
+							$menu_list = '';
+							/**
+								Organise le menu dans un array comme cela :
+								Array ( [145] => Array ( [name] => Éditions Précédentes
+														 [url] => http://127.0.0.1/wordpress/?page_id=42 )
+										[141] => Array ( [name] => horaire 
+														 [url] => http://127.0.0.1/wordpress/?page_id=131 ) 
+										[143] => Array ( [name] => Comité 
+														 [url] => http://127.0.0.1/wordpress/?page_id=44 
+														 [0] => Comité 2010 
+														 [1] => Comité 2009 ) 
+										)
+							*/
+							foreach ( (array) $menu_items as $key => $menu_item ) 
+							{
+								$title = $menu_item->title;
+								$url = $menu_item->url;
+								$id = $menu_item->ID;
+								$id_parent = $menu_item->menu_item_parent;
+								$post_par = $menu_item->post_parent;
+								if($id_parent == 0 ) // si c'est un parent
+								{
+									$menu_array[$id] = array();
+									$menu_array[$id]['name'] = $title;
+									$menu_array[$id]['url'] = $url;
+								}
+								else // c'est un enfant
+								{
+									$item = '<a href="'.$url.'">'.$title.'</a>';
+									array_push($menu_array[$id_parent],$item);
+								}
+							}
+							
+							/* Création du code html selon l'array */
+							foreach((array) $menu_array as $element )
+							{
+								if(count($element) == 2) // c'est un parent sans enfant
+								{
+									$menu_list .= '<li id="menuLink"><a href="'.$element['url'].'">'. $element['name'].'</a></li>';
+								}
+								else // c'est un parent avec enfant
+								{
+									// dropdown header
+									$menu_list .= '<li class="dropdown" id="menuLink">';
+									$menu_list .= '<a href="'.$element['url'].'" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">'.$element['name'].'<span class="caret"></span></a>';
+									// dropdown item
+									$menu_list .= '<ul class="dropdown-menu">';
+									foreach(array_slice($element, 2) as $item)
+									{
+										$menu_list .= '<li>'. $item.'</li>';
+									}
+									$menu_list .= '</ul></li>';
+								}
+							}
+						} else 
+						{
+							$menu_list = '<li  id="menuLink">Menu "' . $menu_name . '" not defined.</li>';
+						}
+						echo $menu_list;
+				// $menu_list now ready to output
+				 ?>
 				</ul>
 			  </div><!--/.nav-collapse -->
 			  <!--countdown script -->
@@ -81,38 +143,8 @@
 			  </div>
 			</div>
 		 </nav>
-		<!-- old header 
-		<header class="site-header">
-		<?php if ( dynamic_sidebar('sidebar-4') ) : else : endif; ?>
-			<!-- image du header 
-			<?php if ( get_header_image() ) : ?>
-				<div id="site-header">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
-					</a>
-				</div>
-			<?php endif; ?>
-			
-		</header>
-		and old navigation
-		<nav id="main-navigation">
-			<ul>
-				<li class="page_home">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						Accueil
-					</a>
-				</li>
-			</ul>
-			<!-- menu navigation principal 
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'depth' => '1' ) ); /*utiliser depth pour choisir le niveau des pages */?>
-		</nav>  
-		and old stuff :)
-		<div class="page-info">
-			<?php if (is_home()) : /*si on est dans la page d'accueil */ ?>
-				<h1>Accueil</h1>
-			<?php elseif ($post->post_parent == 0) : ?>
-				<h1><?php wp_title( ''); ?></h1>
-			<?php endif; ?>
-			<hr class="content-separator">
-		</div>  -->
+		 <?php /*  wp_nav_menu( array('menu' => 'Nav Menu' ,
+		 							'container' => 'div',
+		 							'container_class' => 'navbar-collapse collapse',
+		 							'menu_class' => 'nav navbar-nav' )); */?>
 		
