@@ -34,7 +34,6 @@ $args_logo = array(
 );
 add_theme_support( 'custom-logo', $args_logo );
 
-
 // Misc
 function get_logo_url() {
   $custom_logo_id = get_theme_mod( 'custom_logo' );

@@ -85,7 +85,11 @@ h2 {
  * Structure
  **/
 
-.leftPoster {
+.page-container {
+  width:100%
+}
+
+.page-side {
   width:27%;
   position:fixed;
   float:left;
@@ -96,7 +100,7 @@ h2 {
   background-size: contain;
 }
 
-.rightContent {
+.page-main {
   background-color: white;
   display:inline-block;
   width:70%;
@@ -110,9 +114,6 @@ h2 {
 
 .post {
   text-align: justify;
-}
-.container {
-  width:100%
 }
 
 /**

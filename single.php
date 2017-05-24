@@ -1,10 +1,10 @@
 <?php get_header(); ?>
-<div class="container">
-  <div class="leftPoster" <?php if ( get_header_image() ) : ?>
-            style="background-image:url(<?php header_image(); ?>)"
-      <?php endif; ?> >
+
+<div class="container page-container">
+  <div class="page-side">
+    <?php get_template_part( 'inc/sidebar' ); ?>
   </div>
-  <div class="rightContent">
+  <div class="page-main">
     <?php if (have_posts()) : ?>
     <?php while (have_posts()) : the_post(); ?>
       <div class="post">
