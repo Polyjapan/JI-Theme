@@ -52,8 +52,7 @@ if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name 
       // dropdown header
       $menu_list .= '<li class="dropdown" id="menuLink">';
       // add the page link
-      //$menu_list .= '<a href="'.$element['url'].'" style="float:left;padding-right:0px;display:inline-block;">'.$element['name'].'</a>';
-      $menu_list .= '<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="float:left;padding-left:0px;display:inline-block;">'.$element['name'].'<span class="caret"></span></a>';
+      $menu_list .= '<a href="#" class="dropdown-toggle navbar-dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">'.$element['name'].'<span class="caret"></span></a>';
       // dropdown item
       $menu_list .= '<ul class="dropdown-menu">';
       foreach(array_slice($element, 2) as $item)
