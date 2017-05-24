@@ -44,7 +44,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img alt="Japan Impact" src="https://www.japan-impact.ch/wp-content/uploads/2016/10/logoSite17.png" width="140%"></a>
+          <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+            <img alt="Japan Impact" src="<?php get_logo_url(); ?>" width="140%">
+          </a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
