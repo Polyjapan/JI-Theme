@@ -28,4 +28,11 @@ $args_header = array(
 );
 add_theme_support( 'custom-header', $args_header );
 
+$args_logo = array(
+  'width'         => 300,
+  'height'        => 50,
+  'default-image' => get_template_directory_uri() . 'assets/images/default-logo.png',
+);
+add_theme_support( 'custom-logo', $args_logo );
+
 ?>
