@@ -1,50 +1,31 @@
 <?php
-remove_action('wp_head', 'wp_generator');
-add_theme_support( 'post-thumbnails' );
-/* Support pour un header personalise */
-$args_header = array(
-	'width'         => 700,
-	'height'        => 900,
-	'default-image' => get_template_directory_uri() . '/images/logo-b.png',
-);
-add_theme_support( 'custom-header', $args_header );
 
-// test si un page est un enfant,petit-enfant etc... d'une autre
-function is_child($pageID) { 
-	global $post; 
-	if( is_page() && (($post->post_parent==$pageID) || ($post->ancestors && in_array( $pageID, $post->ancestors) )  )) {
-               return true;
-	} else { 
-               return false; 
-	}
+// Load CSS and JS
+function jitheme_enqueue_styles() {
+  wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
+  wp_enqueue_style( 'ji-style', get_stylesheet_uri());
 }
 
+function jitheme_enqueue_scripts() {
+  wp_enqueue_script( 'jquery', get_template_directory_uri() . '/assets/js/jquery-3.2.1.min.js');
+  wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js');
+  wp_enqueue_script( 'ji-countdown', get_template_directory_uri() . '/assets/js/countdown.js');
+}
+add_action( 'wp_enqueue_scripts', 'jitheme_enqueue_styles' );
+add_action( 'wp_enqueue_scripts', 'jitheme_enqueue_scripts' );
 
-/**
-* Register the menu
-* 
-*/
+// Register the nav
 function register_my_menu() {
   register_nav_menu('header-menu',__( 'Nav Menu' ));
 }
 add_action( 'init', 'register_my_menu' );
 
+// Customization
+$args_header = array(
+  'width'         => 700,
+  'height'        => 900,
+  'default-image' => get_template_directory_uri() . 'assets/images/default-header.jpg',
+);
+add_theme_support( 'custom-header', $args_header );
 
-/**
-*	Enqueuing script and styles
-*
-*/
-function Japan_Impact_script () {
-	// bootstrap
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css');
-	//style.css
-	wp_enqueue_style( 'style', get_stylesheet_uri() );
-	// countdown
-	wp_enqueue_script( 'Countdown', get_template_directory_uri() . '/countdown/countdown.js', array(), '1.0.0', false);
-	// Jquery
-	wp_enqueue_script( 'jquery');
-	// Bootstrap js
-	wp_enqueue_script( 'Bootstrap',get_template_directory_uri() . '/js/bootstrap.min.js', array(), '1.0.0', true);
-}
-
-add_action( 'wp_enqueue_scripts', 'Japan_Impact_script' );
+?>

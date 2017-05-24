@@ -1,155 +1,155 @@
 /*
-Theme Name: Japan Impact
-Theme URI: 127.0.0.1
-Author: Tony Clavien / PolyJapan
-Author URI: http://polyjapan.moe/
-Description: This is the theme for the Japan Impact website
-Version: 2.0
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-*/
+ * Theme Name: Japan Impact
+ * Theme URI: 127.0.0.1
+ * Author: Tony Clavien / PolyJapan
+ * Author URI: http://polyjapan.moe/
+ * Description: Custom theme for Japan Impact's website
+ * Version: 2.0
+ * License: GNU General Public License v2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ */
 
 #centerP {
-	margin:auto;
-	padding-top: 5px;
-	width:200px;
+  margin:auto;
+  padding-top: 5px;
+  width:200px;
 }
 
 #JI_slider {
-    max-width: 800px;
-    margin: auto;
+  max-width: 800px;
+  margin: auto;
 }
 
 #carousel-example-generic {
-	max-width:400px;
-	margin:auto;
+  max-width:400px;
+  margin:auto;
 }
 
 #partenaires {
-	display:inline-block;
-	width:250px;
-	margin:20px;
-	vertical-align: top;
+  display:inline-block;
+  width:250px;
+  margin:20px;
+  vertical-align: top;
 }
 
 #partenairesImage {
-	display:block;
-	margin:auto;
+  display:block;
+  margin:auto;
 }
 
 #activites {
-	display:inline-block;
-	width:400px;
-	margin:20px;
-	vertical-align: top;
+  display:inline-block;
+  width:400px;
+  margin:20px;
+  vertical-align: top;
 }
 
 #activitesImage {
-	display:block;
-	margin:auto;
+  display:block;
+  margin:auto;
 }
 
 h2 {
-	color : #aa0000;
-	padding-left: 40px;
+  color : #aa0000;
+  padding-left: 40px;
 }
 /** main content */
 .leftPoster {
-	width:27%;
-	position:fixed;
-	float:left;
-	display: inline-block;
-	height:81%;
-	/*background-image: url(http://beta.japan-impact.ch/wp-content/uploads/2015/09/f4-vente.png);*/
-	background-position: center center;
-	background-repeat:  no-repeat;
-	/*background-attachment: fixed;*/
-    background-size: contain;
+  width:27%;
+  position:fixed;
+  float:left;
+  display: inline-block;
+  height:81%;
+  /*background-image: url(http://beta.japan-impact.ch/wp-content/uploads/2015/09/f4-vente.png);*/
+  background-position: center center;
+  background-repeat:  no-repeat;
+  /*background-attachment: fixed;*/
+  background-size: contain;
 }
 
 .rightContent {
-	background-color: white;
-	display:inline-block;
-	/*min-height:700px;*/
-	/*min-height:2000px;*/
-	width:70%;
-	margin-left:30%;
-	padding-bottom: 100px;
-	padding-left: 15px;
-	padding-right: 15px;
-	padding-top: 15px;
-	margin-bottom: 15px;
+  background-color: white;
+  display:inline-block;
+  /*min-height:700px;*/
+  /*min-height:2000px;*/
+  width:70%;
+  margin-left:30%;
+  padding-bottom: 100px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  margin-bottom: 15px;
 }
 
 .post {
-	text-align: justify;
+  text-align: justify;
 }
- /* End of main content*/
+/* End of main content*/
 .container {
-	width:100%
+  width:100%
 }
 
 /** Navigation menu */
 .navbar {
-	background-color : #aa0000;
+  background-color : #aa0000;
 }
 
 .navbar-nav {
-	margin:auto;
-	max-width:610px;
-	float:none;
+  margin:auto;
+  max-width:610px;
+  float:none;
 }
 
 #menuLink a{
-	color: #ffffff;
+  color: #ffffff;
 }
 
 .dropdown-menu {
-	background-color : black;
-	border-bottom-left-radius : 20px;
-	border-bottom-right-radius : 20px;
+  background-color : black;
+  border-bottom-left-radius : 20px;
+  border-bottom-right-radius : 20px;
 }
 
 .dropdown-menu a:hover {
-	background-color: black;
+  background-color: black;
 }
 
 .navbar-brand {
-	padding-left:5 px;
-	padding-top:5px;
-	padding-bottom:0px;
-	padding-right:0px;
-	max-height:50px;
-	max-width:200px;
+  padding-left:5 px;
+  padding-top:5px;
+  padding-bottom:0px;
+  padding-right:0px;
+  max-height:50px;
+  max-width:200px;
 }
 
 .navbar-countdown {
-	position: fixed;
-	right:15px;
-	top: 15px;
-	color: white;
+  position: fixed;
+  right:15px;
+  top: 15px;
+  color: white;
 }
 
 /* End of navigation menu */
 
 footer {
-	position:fixed;
-	bottom:0px;
-	background-color: #EDEDED;
-	width:100%;
-	height:50px;
-	vertical-align : middle;
+  position:fixed;
+  bottom:0px;
+  background-color: #EDEDED;
+  width:100%;
+  height:50px;
+  vertical-align : middle;
 }
 
 .languages {
-    position: absolute;
-    bottom: 0px;
-    right: 20px;
-    height: 50px;
+  position: absolute;
+  bottom: 0px;
+  right: 20px;
+  height: 50px;
 }
 
 .lang-item {
-    list-style: none;
+  list-style: none;
 }
 
 /* static menu */
@@ -160,55 +160,55 @@ body {
 /** media for mobile */
 
 @media (max-width: 767px) {
-	.leftPoster{
-		width:0%;
-	}
-	
-	.rightContent{
-		width:100%;
-		margin-left:0%;
-		/*padding: 0px;*/
-		/* fonctionne mais moche
-		background-image: url("../../images/Entry2.jpg");
-		background-position: center center;
-		background-repeat:  no-repeat;
-		background-size: contain;*/
-	}
-	
-	.navbar-countdown  {
-		 visibility: hidden;
-	}
+  .leftPoster{
+    width:0%;
+  }
 
-	.dropdown {
-		min-height: 40px;	
-	}
+  .rightContent{
+    width:100%;
+    margin-left:0%;
+    /*padding: 0px;*/
+    /* fonctionne mais moche
+    background-image: url("../../images/Entry2.jpg");
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-size: contain;*/
+  }
 
-	.navbar-nav {
-		float:none !important;
-	}
+  .navbar-countdown  {
+    visibility: hidden;
+  }
 
-/* Plugin style */
-	.sfsi_plus_wicons {
-		width: 30px !important;
-		height: 30px !important;
-	}
+  .dropdown {
+    min-height: 40px;	
+  }
 
-	.sfsiplus_norm_row {
-		text-align: left !important;
-		top: 10px;
-	}
+  .navbar-nav {
+    float:none !important;
+  }
+
+  /* Plugin style */
+  .sfsi_plus_wicons {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .sfsiplus_norm_row {
+    text-align: left !important;
+    top: 10px;
+  }
 }
 
 /* media for low resolution */
 @media (max-width: 1200px) {
 
-	.navbar-countdown  {
-		 visibility: hidden;
-	}
+  .navbar-countdown  {
+    visibility: hidden;
+  }
 
-	.navbar-nav {
-		float:right;
-	}
+  .navbar-nav {
+    float:right;
+  }
 }
 
 /* End of media for mobile */
@@ -231,5 +231,5 @@ body {
 
 /* plugin style */
 .sfsiplus_norm_row {
-	width: 100% !important;
+  width: 100% !important;
 }
