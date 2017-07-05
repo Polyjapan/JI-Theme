@@ -81,6 +81,10 @@ h2 {
   color: white;
 }
 
+.admin-bar .navbar-fixed-top {
+  top: 28px;
+}
+
 /**
  * Structure
  **/
@@ -100,6 +104,10 @@ h2 {
   background-size: contain;
 }
 
+.sidebar-img {
+  width:100%;
+}
+
 .page-main {
   background-color: white;
   display:inline-block;
@@ -114,6 +122,11 @@ h2 {
 
 .post {
   text-align: justify;
+}
+
+#social-links {
+  text-align: center;
+  display: inline-block;
 }
 
 /**

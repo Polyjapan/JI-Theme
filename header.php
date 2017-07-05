@@ -34,7 +34,7 @@
       wp_head();
     ?>
   </head>
-  <body>
+  <body <?php body_class(); ?>>
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
