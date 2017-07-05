@@ -127,6 +127,20 @@ h2 {
 #social-links {
   text-align: center;
   display: inline-block;
+  width: 100%;
+}
+
+#social-links a img {
+  max-width: 50px;
+  margin: 10px;
+}
+
+#social-links a {
+  text-decoration: none;
+}
+
+#social-links a:hover {
+  opacity: 0.5;
 }
 
 /**

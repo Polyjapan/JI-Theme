@@ -36,23 +36,21 @@
   </head>
   <body <?php body_class(); ?>>
     <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-            <img alt="Japan Impact" src="<?php get_logo_url(); ?>" width="140%">
-          </a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <?php get_template_part('inc/navigation');?>
-          </ul>
-        </div>
-        <?php get_template_part('inc/countdown');?>
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+          <img alt="Japan Impact" src="<?php get_logo_url(); ?>" width="140%">
+        </a>
       </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <?php get_template_part('inc/navigation');?>
+        </ul>
+      </div>
+      <?php get_template_part('inc/countdown');?>
     </nav>
