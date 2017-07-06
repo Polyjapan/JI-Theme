@@ -16,7 +16,7 @@
         hour	: "HOURS",
         day 	: "JOURS",
         month 	: "MOIS",
-        year 	: "ANNEE"			// <- no comma on last item!
+        year 	: "ANNEE"
       }
     });
   </script>
