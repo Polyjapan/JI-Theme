@@ -17,6 +17,7 @@ add_action( 'wp_enqueue_scripts', 'jitheme_enqueue_scripts' );
 // Register the nav
 function register_my_menu() {
   register_nav_menu('header-menu',__( 'Nav Menu' ));
+  register_nav_menu('footer-menu',__( 'Footer Menu' ));
 }
 add_action( 'init', 'register_my_menu' );
 
@@ -90,6 +91,55 @@ function display_polyjapan_element()
       <input type="text" name="polyjapan_url" id="polyjapan_url" value="<?php echo get_option('polyjapan_url'); ?>" />
     <?php
 }
+
+/**
+ * Organise le menu demandé dans un array comme cela :
+ * Array ( [145] => Array ( [name] => Éditions Précédentes
+ * [url] => http://127.0.0.1/wordpress/?page_id=42 )
+ * [141] => Array ( [name] => horaire
+ * [url] => http://127.0.0.1/wordpress/?page_id=131 )
+ * [143] => Array ( [name] => Comité
+ * [url] => http://127.0.0.1/wordpress/?page_id=44
+ * [0] => Comité 2010
+ * [1] => Comité 2009 )
+ * )
+ *
+ * @param $menu_name string le nom du menu
+ * @return array le menu trié comme indiqué dans la description de la méthode, ou un tableau vide si le
+ * menu n'existe pas
+ */
+function get_menu($menu_name) {
+    if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) {
+
+        $menu_array = array();
+        $menu = wp_get_nav_menu_object($locations[$menu_name]);
+
+        $menu_items = wp_get_nav_menu_items($menu->term_id);
+
+        foreach ((array)$menu_items as $key => $menu_item) {
+            $title = $menu_item->title;
+            $url = $menu_item->url;
+            $id = $menu_item->ID;
+            $id_parent = $menu_item->menu_item_parent;
+            // $post_par = $menu_item->post_parent;
+            if ($id_parent == 0) // si c'est un parent
+            {
+                $menu_array[$id] = array();
+                $menu_array[$id]['name'] = $title;
+                $menu_array[$id]['url'] = $url;
+            } else // c'est un enfant
+            {
+                $item = '<a href="' . $url . '">' . $title . '</a>';
+                array_push($menu_array[$id_parent], $item);
+            }
+        }
+
+        return $menu_array;
+    } else {
+        return array();
+    }
+}
+
 
 function display_theme_panel_fields()
 {
