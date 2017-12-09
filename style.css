@@ -45,6 +45,7 @@ h2 {
 
 .navbar-dropdown-toggle {
   float: left;
+  padding-left: 15px;
   display: inline-block;
 }
 
@@ -54,8 +55,8 @@ h2 {
 
 .dropdown-menu {
   background-color : black;
-  border-bottom-left-radius : 20px;
-  border-bottom-right-radius : 20px;
+  border-bottom-left-radius : 8px;
+  border-bottom-right-radius : 8px;
   overflow: hidden;
 }
 
